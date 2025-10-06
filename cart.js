@@ -4,6 +4,7 @@ let i=""
 let price=0;
 let gst=0;
 let total=0;
+let newcart=[]
 cart.forEach((value)=>{i+=`<div class="cart-product cart-id-${value.id}">
     <div class="product-img-div">
         <img class="product-img" src="${value.img}" alt="">
@@ -20,10 +21,10 @@ cart.forEach((value)=>{i+=`<div class="cart-product cart-id-${value.id}">
     <button class="product-remove remove-icon" data-id="${value.id}"><img src="icon/trash.svg" class="trash"></button>
 </div>`})
 document.querySelector('.cart-product-main').innerHTML=`${i}`
-document.querySelectorAll(".product-remove").forEach((value)=>{value.addEventListener("click",()=>{
-    cart.forEach((cartProduct,index)=>{if(cartProduct.id===value.dataset.id){cart=cart.splice(index,1)}});
+document.querySelectorAll(".product-remove").forEach((value)=>{value.addEventListener("click",()=>{newcart=[];
+    cart.forEach((cartProduct,index)=>{if(cartProduct.id!==value.dataset.id){newcart.push(cartProduct)}});
     document.querySelector(`.cart-id-${value.dataset.id}`).remove();
- 
+ cart=newcart
     save(cart)
       pricecal();
     final()
@@ -56,6 +57,7 @@ final()
 function pricecal(){ price=0;
  gst=0;
  total=0 ;cart.forEach((value)=>{price+=(Number(value.rate)*Number(value.quantity))}),gst=Number(( price*18/100).toFixed(2)),total=price+gst+5}
+
 
 
 
