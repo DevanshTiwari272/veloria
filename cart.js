@@ -52,4 +52,7 @@ function final(){document.querySelector(".final-price").innerHTML=`  <div class=
     </div>`
                 }
 final()
-function pricecal(){ cart.forEach((value)=>{price+=(Number(value.rate)*Number(value.quantity))}),gst=Number(( price*18/100).toFixed(2)),total=price+gst+5}
+function pricecal(){ price=0;
+ gst=0;
+ total=0 ;cart.forEach((value)=>{price+=(Number(value.rate)*Number(value.quantity))}),gst=Number(( price*18/100).toFixed(2)),total=price+gst+5}
+
