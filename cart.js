@@ -21,7 +21,7 @@ cart.forEach((value)=>{i+=`<div class="cart-product cart-id-${value.id}">
 </div>`})
 document.querySelector('.cart-product-main').innerHTML=`${i}`
 document.querySelectorAll(".product-remove").forEach((value)=>{value.addEventListener("click",()=>{
-    cart.forEach((cartProduct,index)=>{if(cartProduct.id===value.dataset.id){cart.splice(index,1)}});
+    cart.forEach((cartProduct,index)=>{if(cartProduct.id===value.dataset.id){cart=cart.splice(index,1)}});
     document.querySelector(`.cart-id-${value.dataset.id}`).remove();
  
     save(cart)
@@ -56,5 +56,6 @@ final()
 function pricecal(){ price=0;
  gst=0;
  total=0 ;cart.forEach((value)=>{price+=(Number(value.rate)*Number(value.quantity))}),gst=Number(( price*18/100).toFixed(2)),total=price+gst+5}
+
 
 
