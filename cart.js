@@ -1,3 +1,4 @@
+
 import { save } from "./util.js"
 let cart=JSON.parse(localStorage.getItem("cart"))
 let i=""
@@ -57,7 +58,12 @@ final()
 function pricecal(){ price=0;
  gst=0;
  total=0 ;cart.forEach((value)=>{price+=(Number(value.rate)*Number(value.quantity))}),gst=Number(( price*18/100).toFixed(2)),total=price+gst+5}
+function purchase(){document.querySelector('.purchase').addEventListener('click',()=>{document.querySelector(".final-price").classList.add('last-step');document.querySelector(".final-price").innerHTML=` <div class="loading hide"></div>
+ `;setTimeout(()=>{document.querySelector('.final-price').innerHTML=` <div class="last-div">
+<p class="purchase-done">Thankyou for your purchase</p>
+<div class="party-poper">🎉</div>
+</div>`},2000);setTimeout(()=>{document.querySelector(".final-price").classList.remove('last-step');final();purchase()},5000)})
 
-
-
+ }
+ purchase()
 
