@@ -23,9 +23,10 @@ export function product(o){i="";
         </div>`
         
 });document.querySelector(`.all-main`).innerHTML=`${i}`
-;document.querySelectorAll(".product-img-div").forEach((value)=>{value.addEventListener("click",()=>{ choose={id:value.dataset.id,name:value.dataset.name,rate:value.dataset.rate,img:value.dataset.img};save();window.open("deep.html")})})}
+;document.querySelectorAll(".product-img-div").forEach((value)=>{value.addEventListener("click",()=>{ choose={id:value.dataset.id,name:value.dataset.name,rate:value.dataset.rate,img:value.dataset.img};save();window.open("deep.html","myTab")})})}
 
 
 product()
 function save(){
 localStorage.setItem('choose',JSON.stringify(choose))}
+
