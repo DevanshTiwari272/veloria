@@ -1,0 +1,43 @@
+html{height: 100%;width: 100%;}
+body{margin: 0px;font-family: sans-serif;padding-top: 120px;min-height: 100%;background-color: rgb(239, 239, 239);}
+header{position: fixed;width: 100%;top: 0;background-color: white;z-index: 3;}
+main{width: 100%;height: 100%;display: flex;flex-direction: column;gap: 20px;padding: 20px;}
+.main-head{width: 100%;height: 80px;display: flex;}
+.web-name-div{display: flex;align-items: center;padding-left: 50px;}
+.web-name{text-align: center;font-weight: 700;font-size: 40px;}
+.head-nav-div{display: flex;align-items: center;justify-content: end;width: 100%;gap: 15px;font-weight: 500;padding: 5px;}
+.product-nav{width: 100%;display: flex;padding: 10px;justify-content: start;gap: 45px;align-items: center;background-color: rgb(239, 239, 239);padding-left: 50px;font-weight: 100;}
+/*make nav2 less bold*/
+.nav2:hover,.nav1:hover{cursor: pointer;}
+.product-banner{width: fit-content;height: fit-content;position: relative;margin-top: 10px;}
+.product-banner-text-div{position: absolute;font-size: 70px;color: rgba(229, 228, 228,0.8);max-width: 600px;top: 0;margin: 0px;font-family:'Lucida Sans';padding-left:5px ;width: 100%;}
+.product-banner-text{margin: 0;}
+.product-banner-img{height: 400px;width: 100%;object-fit: contain;object-position: top;animation: anime 1s 1 ease-in-out;animation-delay: 4s;}
+@keyframes anime{0%{opacity: 1;}100%{opacity: 0.5;}}
+.brand-main-div{display: flex;justify-content: space-between;}
+.brand-div{flex: 1;border: solid 0.5px ;border-color: lightgrey;}
+.img-logo{width: 100%;height: 100%;object-fit: cover;object-position: center;}
+.brand-heading{margin: 0px;margin-bottom: 25px;}
+@media screen and (max-width:1100px) {.product-banner-text-div{max-width: 300px;}
+.product-banner-text{font-size: 35px;}
+    
+}
+.slide-contain{width: 100%;display: flex;justify-content: center;flex-direction: column;align-items: center;margin-top: 15px;}
+.shop-guide{font-size: 45px;}
+.product-slide-main-div{width: 100%;max-width: 1330px;overflow: hidden;height: 400px;}
+.slide{min-width: 650px;height: 400px;position: relative;}
+.slide-img{width: 100%;height: 100%;object-fit: cover;}
+.shop-now{opacity: 0;transition: 1s;}
+.slide:hover .shop-now{position: absolute;bottom: 10px;height: 50px;width: 120px;z-index: 2;left: 35%;background-color: rgb(225, 225, 224);border-radius: 50px;border: 0.8px lightslategray;opacity: 1;}
+
+.slide-animation{display: flex;gap: 15px;animation: slide 20s infinite linear;border: solid;min-width: fit-content;}
+@keyframes slide{50%{margin-left: -1330px;}}
+.all-brand{display: flex;flex-direction: column;align-items: center;border: solid 0.5px ;border-color: lightgrey;height: fit-content;justify-content: center;padding: 30px;background-color: white;}
+.slide-animation:hover{animation-play-state: paused;}
+@media screen and (max-width:600px){
+    .product-banner{width: 100%;height: 500px;}
+    .product-banner-img{object-fit: cover;}
+    .slide{height: 300px;min-width: 300px;}
+@keyframes slide{50%{margin-left: -870px;}}
+    .head-nav-div{justify-content: center;}
+}
