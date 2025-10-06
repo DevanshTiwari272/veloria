@@ -23,13 +23,14 @@ document.querySelector('.cart-product-main').innerHTML=`${i}`
 document.querySelectorAll(".product-remove").forEach((value)=>{value.addEventListener("click",()=>{
     cart.forEach((cartProduct,index)=>{if(cartProduct.id===value.dataset.id){cart.splice(index,1)}});
     document.querySelector(`.cart-id-${value.dataset.id}`).remove();
-   
+   pricecal();
+    final()
     save(cart)
      console.log(localStorage.getItem('cart'))
 })})
 pricecal()
 
-document.querySelector(".final-price").innerHTML=`  <div class="price-breakdown">
+function final(){document.querySelector(".final-price").innerHTML=`  <div class="price-breakdown">
         <div class="price-row">
             <span class="price-label">Base Price:</span>
             <span class="price-value" id="basePrice">$${price}</span>
@@ -49,4 +50,6 @@ document.querySelector(".final-price").innerHTML=`  <div class="price-breakdown"
         </div>
         <button class="purchase">confirm</button>
     </div>`
-   function pricecal(){ cart.forEach((value)=>{price+=(Number(value.rate)*Number(value.quantity))}),gst=Number(( price*18/100).toFixed(2)),total=price+gst+5}
+                }
+final()
+function pricecal(){ cart.forEach((value)=>{price+=(Number(value.rate)*Number(value.quantity))}),gst=Number(( price*18/100).toFixed(2)),total=price+gst+5}
