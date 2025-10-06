@@ -78,7 +78,15 @@ main{width: 100%;height: 100%;display: grid;grid-template-columns: 1fr 1fr;gap: 
 .purchase{background-color: black;color: white;width: 150px;height: 50px;align-self: center;}
 .remove-icon{position: absolute;right: 5px;top: 5px;height: 50px;width: 50px;}
 .remove-icon:hover{box-shadow: 2px 2px 0.4px rgba(0,0,0,0.5);}
+.last-step{display: flex;justify-content: center;align-items: center;}
+.last-div{display: flex;}
+.party-poper{font-size: 50px;margin: 0px;}
+.purchase-done{font-size: 30px;margin: 0px;}
 @media screen and (max-width:600px) {
    main{grid-template-columns: 1fr;}
-    
+    .party-poper{font-size: 30px;}
+    .purchase-done{font-size: 25px;}
 }
+
+.loading{border: solid;width: 50px;height: 50px;border-radius: 50%;border-bottom: none;animation: loading 1s 3 linear;}
+@keyframes loading{100%{transform: rotateZ(360deg);}}
